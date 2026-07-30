@@ -510,3 +510,81 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    /* Sidebar Mobile (Off-canvas) */
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100vh;
+        width: 280px;
+        transition: left 0.3s ease;
+        box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+
+    .mobile-menu-btn {
+        display: flex !important;
+        background: transparent;
+        border: none;
+        color: var(--text-main);
+        font-size: 1.5rem;
+    }
+
+    /* Topbar Mobile */
+    .topbar {
+        padding: 0 1rem;
+        justify-content: space-between;
+    }
+    
+    .topbar-search {
+        display: none; /* Hide search on small mobile */
+    }
+
+    .user-info {
+        display: none; /* Hide user name text on mobile */
+    }
+
+    .role-selector-container {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    .role-selector-container label {
+        display: none;
+    }
+
+    /* Dashboard Layout */
+    .dashboard-scroll {
+        padding: 1rem;
+    }
+    
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diagnostic-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .diagnostic-grid > .card > div[style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+    }
+}
