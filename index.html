@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custodia | Vehículos Embargados</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ph-fill ph-shield-check"></i>
+                <span>Custodia</span>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <!-- Dynamically populated based on role -->
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item">
+                    <i class="ph ph-gear"></i>
+                    <span>Configuración</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="topbar-search">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar por placa o expediente...">
+                </div>
+                
+                <div class="topbar-actions">
+                    <div class="role-selector-container">
+                        <label for="role-selector">Simulador de Rol:</label>
+                        <select id="role-selector" class="role-selector">
+                            <option value="juez">Juez / Autoridad</option>
+                            <option value="aseguradora">Aseguradora</option>
+                            <option value="grua">Operador de Grúa</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                    <button class="icon-btn">
+                        <i class="ph ph-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <div class="user-profile">
+                        <div class="avatar">
+                            <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="User Avatar">
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name" id="user-name">Dr. Juez Pérez</span>
+                            <span class="user-role" id="user-role-display">Autoridad Judicial</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-scroll" id="main-dashboard-view">
+                <div class="dashboard-header">
+                    <h1 id="dashboard-title">Visión General - Judicial</h1>
+                    <button class="primary-btn" id="primary-action-btn">
+                        <i class="ph ph-plus"></i>
+                        Nueva Orden
+                    </button>
+                </div>
+
+                <!-- KPI Cards -->
+                <div class="kpi-grid" id="kpi-grid">
+                    <!-- Populated dynamically -->
+                </div>
+
+                <!-- Main Data Area -->
+                <div class="data-grid">
+                    <div class="card table-card">
+                        <div class="card-header">
+                            <h2>Actividad Reciente</h2>
+                            <button class="text-btn">Ver todo</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Placa</th>
+                                        <th>Marca / Modelo</th>
+                                        <th>Fecha Ingreso</th>
+                                        <th>Estado</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-body">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card sidebar-card" id="context-sidebar-card">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diagnostic Report View (Hidden by default) -->
+            <div class="dashboard-scroll" id="diagnostic-view" style="display: none;">
+                <div class="dashboard-header">
+                    <h1>Diagnóstico Tecnológico Corporativo</h1>
+                    <button class="primary-btn" style="background: var(--success);" onclick="window.print()">
+                        <i class="ph ph-printer"></i>
+                        Exportar PDF
+                    </button>
+                </div>
+                
+                <div class="diagnostic-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                    
+                    <div class="card">
+                        <div class="card-header" style="color: var(--primary);">
+                            <h2><i class="ph ph-target"></i> El Ángulo de Entrada</h2>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                            La web actual funciona bien como carta de presentación (típicamente generada rápido con IA), pero su módulo de registro es genérico. Para una empresa que maneja activos críticos y usuarios de alto perfil (jueces, bancos, policías), un registro básico genera cuellos de botella operativos y vulnerabilidades de seguridad.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" style="color: var(--accent);">
+                            <h2><i class="ph ph-lock-key"></i> Vendor Lock-in (El problema de alquilar)</h2>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                            <strong>El problema:</strong> Estás alquilando tu tecnología. Si dejas de pagar, pierdes el acceso, la edición y el hosting. Quedas como rehén del proveedor.<br><br>
+                            <strong>La ventaja profesional:</strong> Un desarrollo a medida te entrega la propiedad total y absoluta del código. Si decides pausar un mantenimiento, la plataforma sigue tuya y en línea.
+                        </p>
+                    </div>
+
+                    <div class="card" style="grid-column: 1 / -1; border-left: 4px solid var(--primary);">
+                        <div class="card-header">
+                            <h2><i class="ph ph-rocket-launch"></i> Mejoras Tecnológicas a Ofrecer</h2>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+                            <div>
+                                <h4 style="color: var(--text-main); margin-bottom: 0.5rem;">Onboarding Multi-Rol Dinámico</h4>
+                                <p style="color: var(--text-muted); font-size: 0.85rem;">Un Juez o un Operador de Grúa deben tener flujos, dashboards y permisos distintos desde el segundo cero.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--text-main); margin-bottom: 0.5rem;">Seguridad Anti-Fraude (SSO)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.85rem;">Eliminar contraseñas tradicionales. Implementar Magic Links y 2FA para blindar la cadena de custodia.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--text-main); margin-bottom: 0.5rem;">Conexión APIs (RUNT)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.85rem;">Cruzar información automáticamente al digitar placa/cédula, eliminando el error humano en pre-validación.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" style="color: var(--warning);">
+                            <h2><i class="ph ph-brain"></i> El Límite de Tokens (Memoria IA)</h2>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                            <strong>Amnesia de la IA:</strong> Al crecer el proyecto, la IA agota su "memoria", olvidando el código base y rompiendo el sistema.<br><br>
+                            <strong>La Solución:</strong> Un arquitecto humano diseña la estructura modular y usa la IA como copiloto, garantizando que escale infinitamente sin romperse.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" style="color: var(--success);">
+                            <h2><i class="ph ph-database"></i> Bases de Datos Reales</h2>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                            <strong>Planas vs Relacionales:</strong> La IA genera bases planas que colapsan. Un esquema relacional robusto (PostgreSQL) gestiona inventarios y cruces de datos en tiempo real, soportando miles de usuarios simultáneos.
+                        </p>
+                    </div>
+
+                    <div class="card" style="grid-column: 1 / -1; background: rgba(59, 130, 246, 0.1); border-color: var(--primary);">
+                        <div class="card-header">
+                            <h2><i class="ph ph-piggy-bank"></i> Ahorro de Costos a Futuro</h2>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                            Reestructurar el backend ahora evita pagar millones cuando el sistema colapse al escalar. La validación automática reduce horas-hombre del equipo jurídico. Además, prepara el ecosistema para lanzar Apps Móviles (iOS/Android) reduciendo el costo a la mitad al tener el backend listo.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
