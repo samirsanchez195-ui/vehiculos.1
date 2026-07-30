@@ -64,53 +64,8 @@
             </header>
 
             <!-- Dashboard Content -->
-            <div class="dashboard-scroll" id="main-dashboard-view">
-                <div class="dashboard-header">
-                    <h1 id="dashboard-title">Visión General - Judicial</h1>
-                    <button class="primary-btn" id="primary-action-btn">
-                        <i class="ph ph-plus"></i>
-                        Nueva Orden
-                    </button>
-                </div>
-
-                <!-- KPI Cards -->
-                <div class="kpi-grid" id="kpi-grid">
-                    <!-- Populated dynamically -->
-                </div>
-
-                <!-- Main Data Area -->
-                <div class="data-grid">
-                    <div class="card table-card">
-                        <div class="card-header">
-                            <h2>Actividad Reciente</h2>
-                            <button class="text-btn">Ver todo</button>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="data-table">
-                                <thead>
-                                    <tr>
-                                        <th>Placa</th>
-                                        <th>Marca / Modelo</th>
-                                        <th>Fecha Ingreso</th>
-                                        <th>Estado</th>
-                                        <th>Acción</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="table-body">
-                                    <!-- Populated dynamically -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    
-                    <div class="card sidebar-card" id="context-sidebar-card">
-                        <!-- Populated dynamically -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Diagnostic Report View (Hidden by default) -->
-            <div class="dashboard-scroll" id="diagnostic-view" style="display: none;">
+            <!-- Diagnostic Report View -->
+            <div class="dashboard-scroll" id="diagnostic-view" style="display: block;">
                 <div class="dashboard-header">
                     <h1>Diagnóstico Tecnológico Corporativo</h1>
                     <button class="primary-btn" style="background: var(--success);" onclick="window.print()">
